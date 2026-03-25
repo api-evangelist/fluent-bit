@@ -1,0 +1,38 @@
+aid: fluent-bit
+name: Fluent Bit
+description: >-
+  Fluent Bit is an open source lightweight log processor and forwarder for collecting, parsing, and routing logs and metrics at scale.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Observability
+  - Logging
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/fluent-bit/refs/heads/main/apis.yml
+created: '2026-03-25'
+modified: '2026-03-25'
+specificationVersion: '0.19'
+apis:
+  - aid: fluent-bit:fluent-bit
+    name: Fluent Bit
+    description: >-
+      Fluent Bit is an open source lightweight log processor and forwarder for collecting, parsing, and routing logs and metrics at scale.
+    humanURL: https://fluentbit.io
+    tags:
+      - Observability
+      - Logging
+    properties:
+      - type: Documentation
+        url: https://docs.fluentbit.io
+      - type: GitHub Repository
+        url: https://github.com/fluent/fluent-bit
+common:
+  - type: Website
+    url: https://fluentbit.io
+  - type: Documentation
+    url: https://docs.fluentbit.io
+  - type: GitHub Organization
+    url: https://github.com/fluent/fluent-bit
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
