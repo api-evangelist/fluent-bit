@@ -5,8 +5,8 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Observability
   - Logging
+  - Observability
 url: >-
   https://raw.githubusercontent.com/api-evangelist/fluent-bit/refs/heads/main/apis.yml
 created: '2026-03-25'
@@ -19,8 +19,8 @@ apis:
       Fluent Bit is an open source lightweight log processor and forwarder for collecting, parsing, and routing logs and metrics at scale.
     humanURL: https://fluentbit.io
     tags:
-      - Observability
       - Logging
+      - Observability
     properties:
       - type: Documentation
         url: https://docs.fluentbit.io
