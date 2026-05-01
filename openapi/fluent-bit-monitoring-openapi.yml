@@ -1,0 +1,209 @@
+openapi: 3.0.3
+info:
+  title: Fluent Bit Monitoring HTTP API
+  description: >-
+    Fluent Bit exposes an embedded HTTP server for runtime monitoring, internal
+    metrics, storage statistics, health checks, and hot reloading. Endpoints are
+    available under v1 (legacy) and v2 (current) paths and respond in JSON,
+    Prometheus 0.0.4, or cmetrics text format.
+  version: "2.0.0"
+  contact:
+    name: Fluent Bit
+    url: https://docs.fluentbit.io/manual/administration/monitoring
+servers:
+  - url: http://127.0.0.1:2020
+    description: Default HTTP server (configurable via http_listen and http_port)
+tags:
+  - name: Build
+  - name: Uptime
+  - name: Metrics
+  - name: Storage
+  - name: Health
+  - name: Reload
+paths:
+  /:
+    get:
+      tags: [Build]
+      summary: Build information
+      description: Returns Fluent Bit build information.
+      responses:
+        "200":
+          description: Build info
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  fluent-bit:
+                    type: object
+                    properties:
+                      version:
+                        type: string
+                      edition:
+                        type: string
+                      flags:
+                        type: array
+                        items:
+                          type: string
+  /api/v1/uptime:
+    get:
+      tags: [Uptime]
+      summary: Uptime information
+      responses:
+        "200":
+          description: Uptime in seconds and human form
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  uptime_sec:
+                    type: integer
+                  uptime_hr:
+                    type: string
+  /api/v1/metrics:
+    get:
+      tags: [Metrics]
+      summary: Internal metrics (v1, JSON)
+      description: Display internal metrics per loaded plugin.
+      responses:
+        "200":
+          description: Plugin metrics
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  input:
+                    type: object
+                    additionalProperties: true
+                  filter:
+                    type: object
+                    additionalProperties: true
+                  output:
+                    type: object
+                    additionalProperties: true
+  /api/v1/metrics/prometheus:
+    get:
+      tags: [Metrics]
+      summary: Internal metrics (v1, Prometheus)
+      responses:
+        "200":
+          description: Prometheus 0.0.4 exposition
+          content:
+            text/plain; version=0.0.4:
+              schema:
+                type: string
+  /api/v1/storage:
+    get:
+      tags: [Storage]
+      summary: Storage layer metrics
+      description: Buffered data and chunk-level statistics for the storage layer.
+      responses:
+        "200":
+          description: Storage metrics
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /api/v1/health:
+    get:
+      tags: [Health]
+      summary: Health check (v1)
+      responses:
+        "200":
+          description: Health string
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/v2/metrics:
+    get:
+      tags: [Metrics]
+      summary: Internal metrics (v2, cmetrics)
+      responses:
+        "200":
+          description: cmetrics text exposition
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/v2/metrics/prometheus:
+    get:
+      tags: [Metrics]
+      summary: Internal metrics (v2, Prometheus)
+      responses:
+        "200":
+          description: Prometheus 0.0.4 exposition
+          content:
+            text/plain; version=0.0.4:
+              schema:
+                type: string
+  /api/v2/health:
+    get:
+      tags: [Health]
+      summary: Health status (v2, JSON)
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+        "500":
+          description: Unhealthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+  /api/v2/reload:
+    get:
+      tags: [Reload]
+      summary: Get hot reload status
+      responses:
+        "200":
+          description: Reload status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  in_progress:
+                    type: boolean
+    post:
+      tags: [Reload]
+      summary: Trigger hot reload
+      responses:
+        "200":
+          description: Reload triggered
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+    put:
+      tags: [Reload]
+      summary: Trigger hot reload (PUT)
+      responses:
+        "200":
+          description: Reload triggered
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
