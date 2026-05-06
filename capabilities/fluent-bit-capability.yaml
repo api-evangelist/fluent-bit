@@ -1,0 +1,397 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Fluent Bit Monitoring HTTP API
+  description: Fluent Bit exposes an embedded HTTP server for runtime monitoring, internal metrics, storage statistics, health
+    checks, and hot reloading. Endpoints are available under v1 (legacy) and v2 (current) paths and respond in JSON, Prometheus
+    0.0.4, or cmetrics text format.
+  tags:
+  - Fluent
+  - Bit
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: fluent-bit
+    baseUri: http://127.0.0.1:2020
+    description: Fluent Bit Monitoring HTTP API HTTP API.
+    resources:
+    - name: resource
+      path: /
+      operations:
+      - name: get
+        method: GET
+        description: Build information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-uptime
+      path: /api/v1/uptime
+      operations:
+      - name: get-api-v1-uptime
+        method: GET
+        description: Uptime information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-metrics
+      path: /api/v1/metrics
+      operations:
+      - name: get-api-v1-metrics
+        method: GET
+        description: Internal metrics (v1, JSON)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-metrics-prometheus
+      path: /api/v1/metrics/prometheus
+      operations:
+      - name: get-api-v1-metrics-prometheus
+        method: GET
+        description: Internal metrics (v1, Prometheus)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-storage
+      path: /api/v1/storage
+      operations:
+      - name: get-api-v1-storage
+        method: GET
+        description: Storage layer metrics
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-health
+      path: /api/v1/health
+      operations:
+      - name: get-api-v1-health
+        method: GET
+        description: Health check (v1)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v2-metrics
+      path: /api/v2/metrics
+      operations:
+      - name: get-api-v2-metrics
+        method: GET
+        description: Internal metrics (v2, cmetrics)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v2-metrics-prometheus
+      path: /api/v2/metrics/prometheus
+      operations:
+      - name: get-api-v2-metrics-prometheus
+        method: GET
+        description: Internal metrics (v2, Prometheus)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v2-health
+      path: /api/v2/health
+      operations:
+      - name: get-api-v2-health
+        method: GET
+        description: Health status (v2, JSON)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v2-reload
+      path: /api/v2/reload
+      operations:
+      - name: get-api-v2-reload
+        method: GET
+        description: Get hot reload status
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post-api-v2-reload
+        method: POST
+        description: Trigger hot reload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: put-api-v2-reload
+        method: PUT
+        description: Trigger hot reload (PUT)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: fluent-bit-rest
+    description: REST adapter for Fluent Bit Monitoring HTTP API.
+    resources:
+    - path: /
+      name: get
+      operations:
+      - method: GET
+        name: get
+        description: Build information
+        call: fluent-bit.get
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/v1/uptime
+      name: get-api-v1-uptime
+      operations:
+      - method: GET
+        name: get-api-v1-uptime
+        description: Uptime information
+        call: fluent-bit.get-api-v1-uptime
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/v1/metrics
+      name: get-api-v1-metrics
+      operations:
+      - method: GET
+        name: get-api-v1-metrics
+        description: Internal metrics (v1, JSON)
+        call: fluent-bit.get-api-v1-metrics
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/v1/metrics/prometheus
+      name: get-api-v1-metrics-prometheus
+      operations:
+      - method: GET
+        name: get-api-v1-metrics-prometheus
+        description: Internal metrics (v1, Prometheus)
+        call: fluent-bit.get-api-v1-metrics-prometheus
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/v1/storage
+      name: get-api-v1-storage
+      operations:
+      - method: GET
+        name: get-api-v1-storage
+        description: Storage layer metrics
+        call: fluent-bit.get-api-v1-storage
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/v1/health
+      name: get-api-v1-health
+      operations:
+      - method: GET
+        name: get-api-v1-health
+        description: Health check (v1)
+        call: fluent-bit.get-api-v1-health
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/v2/metrics
+      name: get-api-v2-metrics
+      operations:
+      - method: GET
+        name: get-api-v2-metrics
+        description: Internal metrics (v2, cmetrics)
+        call: fluent-bit.get-api-v2-metrics
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/v2/metrics/prometheus
+      name: get-api-v2-metrics-prometheus
+      operations:
+      - method: GET
+        name: get-api-v2-metrics-prometheus
+        description: Internal metrics (v2, Prometheus)
+        call: fluent-bit.get-api-v2-metrics-prometheus
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/v2/health
+      name: get-api-v2-health
+      operations:
+      - method: GET
+        name: get-api-v2-health
+        description: Health status (v2, JSON)
+        call: fluent-bit.get-api-v2-health
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/v2/reload
+      name: get-api-v2-reload
+      operations:
+      - method: GET
+        name: get-api-v2-reload
+        description: Get hot reload status
+        call: fluent-bit.get-api-v2-reload
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/v2/reload
+      name: post-api-v2-reload
+      operations:
+      - method: POST
+        name: post-api-v2-reload
+        description: Trigger hot reload
+        call: fluent-bit.post-api-v2-reload
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/v2/reload
+      name: put-api-v2-reload
+      operations:
+      - method: PUT
+        name: put-api-v2-reload
+        description: Trigger hot reload (PUT)
+        call: fluent-bit.put-api-v2-reload
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: fluent-bit-mcp
+    transport: http
+    description: MCP adapter for Fluent Bit Monitoring HTTP API for AI agent use.
+    tools:
+    - name: get
+      description: Build information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: fluent-bit.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-api-v1-uptime
+      description: Uptime information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: fluent-bit.get-api-v1-uptime
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-api-v1-metrics
+      description: Internal metrics (v1, JSON)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: fluent-bit.get-api-v1-metrics
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-api-v1-metrics-prometheus
+      description: Internal metrics (v1, Prometheus)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: fluent-bit.get-api-v1-metrics-prometheus
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-api-v1-storage
+      description: Storage layer metrics
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: fluent-bit.get-api-v1-storage
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-api-v1-health
+      description: Health check (v1)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: fluent-bit.get-api-v1-health
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-api-v2-metrics
+      description: Internal metrics (v2, cmetrics)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: fluent-bit.get-api-v2-metrics
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-api-v2-metrics-prometheus
+      description: Internal metrics (v2, Prometheus)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: fluent-bit.get-api-v2-metrics-prometheus
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-api-v2-health
+      description: Health status (v2, JSON)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: fluent-bit.get-api-v2-health
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-api-v2-reload
+      description: Get hot reload status
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: fluent-bit.get-api-v2-reload
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-api-v2-reload
+      description: Trigger hot reload
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: fluent-bit.post-api-v2-reload
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: put-api-v2-reload
+      description: Trigger hot reload (PUT)
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: fluent-bit.put-api-v2-reload
+      outputParameters:
+      - type: object
+        mapping: $.
