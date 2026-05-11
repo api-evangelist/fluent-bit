@@ -50,6 +50,49 @@ common:
     url: https://launchpass.com/fluent-all
   - type: Community
     url: https://fluentbit.io/community/
+  - type: Integrations
+    url: https://fluentbit.io/integrations
+integrations:
+  - name: Fluentbit, High Performance
+  - name: slack
+  - name: An End to End
+  - name: how it works
+  - name: G cloud
+  - name: microsoft
+  - name: aws
+  - name: digital ocean
+  - name: cisco
+  - name: new relic
+  - name: sumo logic
+  - name: logiq
+  - name: trend
+  - name: datadog
+  - name: logdna
+  - name: lyft
+  - name: couchbase
+  - name: humio
+  - name: linkedin
+  - name: vmware
+  - name: wallmart
+  - name: transit
+  - name: splunk
+  - name: gaintswarm
+  - name: WSO2
+  - name: qualtrics
+  - name: swyft
+  - name: dell
+  - name: swym
+  - name: gm
+  - name: Scalable}
+  - name: Flexible}
+  - name: Efficient}
+  - name: Extensible}
+  - name: Event-Driven Architecture
+  - name: Dynamic Routing
+  - name: Flexible Configuration
+  - name: Robust I/O Handler
+  - name: Upstream Manager
+  - name: Security & TLS
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
