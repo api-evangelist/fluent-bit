@@ -44,7 +44,7 @@ common:
     url: https://fluentbit.io
   - type: Documentation
     url: https://docs.fluentbit.io
-  - type: GitHub Repository
+  - type: GitHubRepository
     url: https://github.com/fluent/fluent-bit
   - type: Slack
     url: https://launchpass.com/fluent-all
