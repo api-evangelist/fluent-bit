@@ -1,0 +1,117 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Fluent Bit Monitoring HTTP API — Reload
+  description: 'Fluent Bit Monitoring HTTP API — Reload. 3 operations. Lead operation: Get hot reload status. Self-contained
+    Naftiko capability covering one Fluent Bit business surface.'
+  tags:
+  - Fluent Bit
+  - Reload
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FLUENT_BIT_API_KEY: FLUENT_BIT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: monitoring-reload
+    baseUri: http://127.0.0.1:2020
+    description: Fluent Bit Monitoring HTTP API — Reload business capability. Self-contained, no shared references.
+    resources:
+    - name: api-v2-reload
+      path: /api/v2/reload
+      operations:
+      - name: get
+        method: GET
+        description: Get hot reload status
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post
+        method: POST
+        description: Trigger hot reload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: put
+        method: PUT
+        description: Trigger hot reload (PUT)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: monitoring-reload-rest
+    port: 8080
+    description: REST adapter for Fluent Bit Monitoring HTTP API — Reload. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/v2/reload
+      name: api-v2-reload
+      description: REST surface for api-v2-reload.
+      operations:
+      - method: GET
+        name: get
+        description: Get hot reload status
+        call: monitoring-reload.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: Trigger hot reload
+        call: monitoring-reload.post
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: put
+        description: Trigger hot reload (PUT)
+        call: monitoring-reload.put
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: monitoring-reload-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Fluent Bit Monitoring HTTP API — Reload. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-hot-reload-status
+      description: Get hot reload status
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: monitoring-reload.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: trigger-hot-reload
+      description: Trigger hot reload
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: monitoring-reload.post
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: trigger-hot-reload-put
+      description: Trigger hot reload (PUT)
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: monitoring-reload.put
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Fluent Bit Monitoring HTTP API — Build
+  description: 'Fluent Bit Monitoring HTTP API — Build. 1 operations. Lead operation: Build information. Self-contained Naftiko
+    capability covering one Fluent Bit business surface.'
+  tags:
+  - Fluent Bit
+  - Build
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FLUENT_BIT_API_KEY: FLUENT_BIT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: monitoring-build
+    baseUri: http://127.0.0.1:2020
+    description: Fluent Bit Monitoring HTTP API — Build business capability. Self-contained, no shared references.
+    resources:
+    - name: root
+      path: /
+      operations:
+      - name: get
+        method: GET
+        description: Build information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: monitoring-build-rest
+    port: 8080
+    description: REST adapter for Fluent Bit Monitoring HTTP API — Build. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1
+      name: root
+      description: REST surface for root.
+      operations:
+      - method: GET
+        name: get
+        description: Build information
+        call: monitoring-build.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: monitoring-build-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Fluent Bit Monitoring HTTP API — Build. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: build-information
+      description: Build information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: monitoring-build.get
+      outputParameters:
+      - type: object
+        mapping: $.
