@@ -1,0 +1,190 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fluent Bit Monitoring HTTP API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Build",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Build information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/"
+          },
+          "docs": "Returns Fluent Bit build information."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Uptime",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Uptime information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v1/uptime"
+          },
+          "docs": "Uptime information"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Metrics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Internal metrics (v1, JSON)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v1/metrics"
+          },
+          "docs": "Display internal metrics per loaded plugin."
+        },
+        {
+          "info": {
+            "name": "Internal metrics (v1, Prometheus)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v1/metrics/prometheus"
+          },
+          "docs": "Internal metrics (v1, Prometheus)"
+        },
+        {
+          "info": {
+            "name": "Internal metrics (v2, cmetrics)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v2/metrics"
+          },
+          "docs": "Internal metrics (v2, cmetrics)"
+        },
+        {
+          "info": {
+            "name": "Internal metrics (v2, Prometheus)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v2/metrics/prometheus"
+          },
+          "docs": "Internal metrics (v2, Prometheus)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Storage",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Storage layer metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v1/storage"
+          },
+          "docs": "Buffered data and chunk-level statistics for the storage layer."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Health",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Health check (v1)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v1/health"
+          },
+          "docs": "Health check (v1)"
+        },
+        {
+          "info": {
+            "name": "Health status (v2, JSON)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v2/health"
+          },
+          "docs": "Health status (v2, JSON)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Reload",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get hot reload status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v2/reload"
+          },
+          "docs": "Get hot reload status"
+        },
+        {
+          "info": {
+            "name": "Trigger hot reload",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://127.0.0.1:2020/api/v2/reload"
+          },
+          "docs": "Trigger hot reload"
+        },
+        {
+          "info": {
+            "name": "Trigger hot reload (PUT)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://127.0.0.1:2020/api/v2/reload"
+          },
+          "docs": "Trigger hot reload (PUT)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
