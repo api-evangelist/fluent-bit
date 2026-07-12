@@ -35,6 +35,8 @@ apis:
       - type: OpenAPI
         url: openapi/fluent-bit-monitoring-openapi.yml
 common:
+  - type: DomainSecurity
+    url: security/fluent-bit-domain-security.yml
   - type: Website
     url: https://fluentbit.io
   - type: Documentation
@@ -47,6 +49,8 @@ common:
     url: https://fluentbit.io/community/
   - type: Integrations
     url: https://fluentbit.io/integrations
+  - url: https://fluentbit.io/blog/index.xml
+    type: Blog
 integrations:
   - name: Fluentbit, High Performance
   - name: slack

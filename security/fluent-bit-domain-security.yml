@@ -1,0 +1,23 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: fluentbit.io
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 27 01:24:15 2026 GMT
+  hsts: false
+- host: docs.fluentbit.io
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  1 01:19:23 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: 127.0.0.1
+  https: false
+domains:
+- domain: fluentbit.io
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false
