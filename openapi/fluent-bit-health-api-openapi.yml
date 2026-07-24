@@ -1,0 +1,52 @@
+openapi: 3.0.3
+info:
+  title: Fluent Bit Monitoring HTTP Build Health API
+  description: Fluent Bit exposes an embedded HTTP server for runtime monitoring, internal metrics, storage statistics, health checks, and hot reloading. Endpoints are available under v1 (legacy) and v2 (current) paths and respond in JSON, Prometheus 0.0.4, or cmetrics text format.
+  version: 2.0.0
+  contact:
+    name: Fluent Bit
+    url: https://docs.fluentbit.io/manual/administration/monitoring
+servers:
+- url: http://127.0.0.1:2020
+  description: Default HTTP server (configurable via http_listen and http_port)
+tags:
+- name: Health
+paths:
+  /api/v1/health:
+    get:
+      tags:
+      - Health
+      summary: Health check (v1)
+      responses:
+        '200':
+          description: Health string
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/v2/health:
+    get:
+      tags:
+      - Health
+      summary: Health status (v2, JSON)
+      responses:
+        '200':
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+        '500':
+          description: Unhealthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error

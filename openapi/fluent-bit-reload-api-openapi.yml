@@ -1,0 +1,59 @@
+openapi: 3.0.3
+info:
+  title: Fluent Bit Monitoring HTTP Build Reload API
+  description: Fluent Bit exposes an embedded HTTP server for runtime monitoring, internal metrics, storage statistics, health checks, and hot reloading. Endpoints are available under v1 (legacy) and v2 (current) paths and respond in JSON, Prometheus 0.0.4, or cmetrics text format.
+  version: 2.0.0
+  contact:
+    name: Fluent Bit
+    url: https://docs.fluentbit.io/manual/administration/monitoring
+servers:
+- url: http://127.0.0.1:2020
+  description: Default HTTP server (configurable via http_listen and http_port)
+tags:
+- name: Reload
+paths:
+  /api/v2/reload:
+    get:
+      tags:
+      - Reload
+      summary: Get hot reload status
+      responses:
+        '200':
+          description: Reload status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  in_progress:
+                    type: boolean
+    post:
+      tags:
+      - Reload
+      summary: Trigger hot reload
+      responses:
+        '200':
+          description: Reload triggered
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+    put:
+      tags:
+      - Reload
+      summary: Trigger hot reload (PUT)
+      responses:
+        '200':
+          description: Reload triggered
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string

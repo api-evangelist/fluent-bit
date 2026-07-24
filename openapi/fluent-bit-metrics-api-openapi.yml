@@ -1,0 +1,73 @@
+openapi: 3.0.3
+info:
+  title: Fluent Bit Monitoring HTTP Build Metrics API
+  description: Fluent Bit exposes an embedded HTTP server for runtime monitoring, internal metrics, storage statistics, health checks, and hot reloading. Endpoints are available under v1 (legacy) and v2 (current) paths and respond in JSON, Prometheus 0.0.4, or cmetrics text format.
+  version: 2.0.0
+  contact:
+    name: Fluent Bit
+    url: https://docs.fluentbit.io/manual/administration/monitoring
+servers:
+- url: http://127.0.0.1:2020
+  description: Default HTTP server (configurable via http_listen and http_port)
+tags:
+- name: Metrics
+paths:
+  /api/v1/metrics:
+    get:
+      tags:
+      - Metrics
+      summary: Internal metrics (v1, JSON)
+      description: Display internal metrics per loaded plugin.
+      responses:
+        '200':
+          description: Plugin metrics
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  input:
+                    type: object
+                    additionalProperties: true
+                  filter:
+                    type: object
+                    additionalProperties: true
+                  output:
+                    type: object
+                    additionalProperties: true
+  /api/v1/metrics/prometheus:
+    get:
+      tags:
+      - Metrics
+      summary: Internal metrics (v1, Prometheus)
+      responses:
+        '200':
+          description: Prometheus 0.0.4 exposition
+          content:
+            text/plain; version=0.0.4:
+              schema:
+                type: string
+  /api/v2/metrics:
+    get:
+      tags:
+      - Metrics
+      summary: Internal metrics (v2, cmetrics)
+      responses:
+        '200':
+          description: cmetrics text exposition
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/v2/metrics/prometheus:
+    get:
+      tags:
+      - Metrics
+      summary: Internal metrics (v2, Prometheus)
+      responses:
+        '200':
+          description: Prometheus 0.0.4 exposition
+          content:
+            text/plain; version=0.0.4:
+              schema:
+                type: string
