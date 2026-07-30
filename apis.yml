@@ -5,7 +5,19 @@ description: >-
   metrics at scale. It exposes an embedded HTTP monitoring server with v1 and v2 endpoints for build info, uptime,
   internal metrics (JSON, Prometheus, cmetrics), storage stats, health checks, and hot reload.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fluent-bit.png
 tags:
   - Logging
   - Observability
@@ -16,24 +28,78 @@ created: '2026-03-25'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: fluent-bit:fluent-bit-monitoring-http-api
-    name: Fluent Bit Monitoring HTTP API
-    description: >-
-      Fluent Bit's embedded HTTP server (default port 2020) exposes endpoints for build information, uptime, internal
-      plugin metrics in JSON, Prometheus, and cmetrics formats, storage layer statistics, health checks, and hot reload.
-    humanURL: https://docs.fluentbit.io/manual/administration/monitoring
-    baseURL: http://127.0.0.1:2020
-    tags:
-      - Logging
-      - Observability
-      - Metrics
-      - Health Check
-      - Prometheus
-    properties:
-      - type: Documentation
-        url: https://docs.fluentbit.io/manual/administration/monitoring
-      - type: OpenAPI
-        url: openapi/fluent-bit-monitoring-openapi.yml
+- aid: fluent-bit:fluent-bit-build-api
+  name: Fluent Bit Build API
+  description: The Build API from Fluent Bit — 1 operation(s) for build.
+  humanURL: https://docs.fluentbit.io/manual/administration/monitoring
+  baseURL: http://127.0.0.1:2020
+  tags:
+  - Build
+  properties:
+  - type: OpenAPI
+    url: openapi/fluent-bit-build-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fluentbit.io/manual/administration/monitoring
+- aid: fluent-bit:fluent-bit-health-api
+  name: Fluent Bit Health API
+  description: The Health API from Fluent Bit — 2 operation(s) for health.
+  humanURL: https://docs.fluentbit.io/manual/administration/monitoring
+  baseURL: http://127.0.0.1:2020
+  tags:
+  - Health
+  properties:
+  - type: OpenAPI
+    url: openapi/fluent-bit-health-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fluentbit.io/manual/administration/monitoring
+- aid: fluent-bit:fluent-bit-metrics-api
+  name: Fluent Bit Metrics API
+  description: The Metrics API from Fluent Bit — 4 operation(s) for metrics.
+  humanURL: https://docs.fluentbit.io/manual/administration/monitoring
+  baseURL: http://127.0.0.1:2020
+  tags:
+  - Metrics
+  properties:
+  - type: OpenAPI
+    url: openapi/fluent-bit-metrics-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fluentbit.io/manual/administration/monitoring
+- aid: fluent-bit:fluent-bit-reload-api
+  name: Fluent Bit Reload API
+  description: The Reload API from Fluent Bit — 1 operation(s) for reload.
+  humanURL: https://docs.fluentbit.io/manual/administration/monitoring
+  baseURL: http://127.0.0.1:2020
+  tags:
+  - Reload
+  properties:
+  - type: OpenAPI
+    url: openapi/fluent-bit-reload-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fluentbit.io/manual/administration/monitoring
+- aid: fluent-bit:fluent-bit-storage-api
+  name: Fluent Bit Storage API
+  description: The Storage API from Fluent Bit — 1 operation(s) for storage.
+  humanURL: https://docs.fluentbit.io/manual/administration/monitoring
+  baseURL: http://127.0.0.1:2020
+  tags:
+  - Storage
+  properties:
+  - type: OpenAPI
+    url: openapi/fluent-bit-storage-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fluentbit.io/manual/administration/monitoring
+- aid: fluent-bit:fluent-bit-uptime-api
+  name: Fluent Bit Uptime API
+  description: The Uptime API from Fluent Bit — 1 operation(s) for uptime.
+  humanURL: https://docs.fluentbit.io/manual/administration/monitoring
+  baseURL: http://127.0.0.1:2020
+  tags:
+  - Uptime
+  properties:
+  - type: OpenAPI
+    url: openapi/fluent-bit-uptime-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fluentbit.io/manual/administration/monitoring
 common:
   - type: AgenticAccess
     url: agentic-access/fluent-bit-agentic-access.yml
