@@ -1,0 +1,24 @@
+{
+  "provider": "fluent-bit",
+  "sources": [
+    "fluent-bit-build-api-openapi.yml",
+    "fluent-bit-health-api-openapi.yml",
+    "fluent-bit-metrics-api-openapi.yml",
+    "fluent-bit-reload-api-openapi.yml",
+    "fluent-bit-storage-api-openapi.yml",
+    "fluent-bit-uptime-api-openapi.yml"
+  ],
+  "outputs": [
+    "fluent-bit-build-api-openapi.yml",
+    "fluent-bit-health-api-openapi.yml",
+    "fluent-bit-metrics-api-openapi.yml",
+    "fluent-bit-reload-api-openapi.yml",
+    "fluent-bit-storage-api-openapi.yml",
+    "fluent-bit-uptime-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
