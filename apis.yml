@@ -101,6 +101,19 @@ apis:
   - type: Documentation
     url: https://docs.fluentbit.io/manual/administration/monitoring
 common:
+  - type: IssueTracker
+    url: https://github.com/fluent/fluent-bit/issues
+  - type: Releases
+    url: https://github.com/fluent/fluent-bit/releases
+  - type: SecurityPolicy
+    url: https://github.com/fluent/fluent-bit/blob/master/SECURITY.md
+  - type: CodeOfConduct
+    url: https://github.com/fluent/fluent-bit/blob/master/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/fluent/fluent-bit/blob/master/CONTRIBUTING.md
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/fluent/fluent-bit/blob/master/LICENSE
   - type: AgenticAccess
     url: agentic-access/fluent-bit-agentic-access.yml
   - type: DomainSecurity
