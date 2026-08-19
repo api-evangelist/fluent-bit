@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fluent Bit Monitoring HTTP Build Metrics API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Metrics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Internal metrics (v1, JSON)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v1/metrics"
+          },
+          "docs": "Display internal metrics per loaded plugin."
+        },
+        {
+          "info": {
+            "name": "Internal metrics (v1, Prometheus)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v1/metrics/prometheus"
+          },
+          "docs": "Internal metrics (v1, Prometheus)"
+        },
+        {
+          "info": {
+            "name": "Internal metrics (v2, cmetrics)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v2/metrics"
+          },
+          "docs": "Internal metrics (v2, cmetrics)"
+        },
+        {
+          "info": {
+            "name": "Internal metrics (v2, Prometheus)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v2/metrics/prometheus"
+          },
+          "docs": "Internal metrics (v2, Prometheus)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,106 @@
+{
+  "item": [
+    {
+      "id": "b4aa108f-300a-42f6-95fc-ccd2ea06ae68",
+      "name": "Storage",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "80b959c8-10ab-4bd5-9766-f740e9d71219",
+          "name": "Storage layer metrics",
+          "request": {
+            "name": "Storage layer metrics",
+            "description": {
+              "content": "Buffered data and chunk-level statistics for the storage layer.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "storage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5c60003c-cb50-4923-8f17-7d1c26948b15",
+              "name": "Storage metrics",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": false,\n  \"key_1\": 8959.883495911308,\n  \"key_2\": 2820,\n  \"key_3\": 2314\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://127.0.0.1:2020",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "06925333-4bd0-41f1-93c9-cb20f795f3c6",
+    "name": "Fluent Bit Monitoring HTTP Build Storage API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Fluent Bit exposes an embedded HTTP server for runtime monitoring, internal metrics, storage statistics, health checks, and hot reloading. Endpoints are available under v1 (legacy) and v2 (current) paths and respond in JSON, Prometheus 0.0.4, or cmetrics text format.\n\nContact Support:\n Name: Fluent Bit",
+      "type": "text/plain"
+    }
+  }
+}

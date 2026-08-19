@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fluent Bit Monitoring HTTP Build Uptime API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Uptime",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Uptime information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v1/uptime"
+          },
+          "docs": "Uptime information"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

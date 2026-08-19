@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fluent Bit Monitoring HTTP Build Reload API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Reload",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get hot reload status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v2/reload"
+          },
+          "docs": "Get hot reload status"
+        },
+        {
+          "info": {
+            "name": "Trigger hot reload",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://127.0.0.1:2020/api/v2/reload"
+          },
+          "docs": "Trigger hot reload"
+        },
+        {
+          "info": {
+            "name": "Trigger hot reload (PUT)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://127.0.0.1:2020/api/v2/reload"
+          },
+          "docs": "Trigger hot reload (PUT)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

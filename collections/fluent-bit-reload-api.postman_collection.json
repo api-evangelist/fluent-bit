@@ -1,0 +1,245 @@
+{
+  "item": [
+    {
+      "id": "4ca1bf84-c071-44ba-90fd-ba198e57ad4b",
+      "name": "Reload",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a2ea4249-eb0b-4d54-9e56-3f44ffb389d7",
+          "name": "Get hot reload status",
+          "request": {
+            "name": "Get hot reload status",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "reload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a74e9587-e52c-4e53-9fc6-7f7b1ecad910",
+              "name": "Reload status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "reload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"in_progress\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7341eed9-1865-4d42-b57b-c816108d85b5",
+          "name": "Trigger hot reload",
+          "request": {
+            "name": "Trigger hot reload",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "reload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74d766aa-16b9-4381-aee9-b0094219a902",
+              "name": "Reload triggered",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "reload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53f3905a-0acb-4396-8bf8-129bc253e311",
+          "name": "Trigger hot reload (PUT)",
+          "request": {
+            "name": "Trigger hot reload (PUT)",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "reload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "641d78b2-ef02-46e8-a5b3-4474ea6ea9ce",
+              "name": "Reload triggered",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "reload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://127.0.0.1:2020",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fe63b337-613f-4507-91bb-8210fecae757",
+    "name": "Fluent Bit Monitoring HTTP Build Reload API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Fluent Bit exposes an embedded HTTP server for runtime monitoring, internal metrics, storage statistics, health checks, and hot reloading. Endpoints are available under v1 (legacy) and v2 (current) paths and respond in JSON, Prometheus 0.0.4, or cmetrics text format.\n\nContact Support:\n Name: Fluent Bit",
+      "type": "text/plain"
+    }
+  }
+}

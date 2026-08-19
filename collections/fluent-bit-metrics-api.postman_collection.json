@@ -1,0 +1,323 @@
+{
+  "item": [
+    {
+      "id": "2b56cd27-3778-4fc1-aee8-be7ea988cd59",
+      "name": "Metrics",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "96680e92-2dc1-4cbd-bbdf-c0effebb14c8",
+          "name": "Internal metrics (v1, JSON)",
+          "request": {
+            "name": "Internal metrics (v1, JSON)",
+            "description": {
+              "content": "Display internal metrics per loaded plugin.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "metrics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "05dab765-302b-40c0-b5e7-b6f544857f3b",
+              "name": "Plugin metrics",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "metrics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"input\": {\n    \"key_0\": 1766\n  },\n  \"filter\": {\n    \"key_0\": 7689\n  },\n  \"output\": {\n    \"key_0\": 6730\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "340916ee-ff2e-4952-89e5-d3b3fc5a7470",
+          "name": "Internal metrics (v1, Prometheus)",
+          "request": {
+            "name": "Internal metrics (v1, Prometheus)",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "metrics",
+                "prometheus"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain; version=0.0.4"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fe606371-6791-45dd-9fe6-e8ec23f2af11",
+              "name": "Prometheus 0.0.4 exposition",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "metrics",
+                    "prometheus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain; version=0.0.4"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain; version=0.0.4"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "25834ed7-90a6-436c-9807-a5f0a545fee4",
+          "name": "Internal metrics (v2, cmetrics)",
+          "request": {
+            "name": "Internal metrics (v2, cmetrics)",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "metrics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "747a978b-effb-4188-8c01-eb9d124b6782",
+              "name": "cmetrics text exposition",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "metrics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "112bec70-c009-40b4-8fc1-2c8a682d7f90",
+          "name": "Internal metrics (v2, Prometheus)",
+          "request": {
+            "name": "Internal metrics (v2, Prometheus)",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v2",
+                "metrics",
+                "prometheus"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain; version=0.0.4"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3d5d454a-397a-4749-bd58-331bf426656c",
+              "name": "Prometheus 0.0.4 exposition",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v2",
+                    "metrics",
+                    "prometheus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain; version=0.0.4"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain; version=0.0.4"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://127.0.0.1:2020",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dd1b93a6-7dd7-46c0-acf6-0816da947852",
+    "name": "Fluent Bit Monitoring HTTP Build Metrics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Fluent Bit exposes an embedded HTTP server for runtime monitoring, internal metrics, storage statistics, health checks, and hot reloading. Endpoints are available under v1 (legacy) and v2 (current) paths and respond in JSON, Prometheus 0.0.4, or cmetrics text format.\n\nContact Support:\n Name: Fluent Bit",
+      "type": "text/plain"
+    }
+  }
+}

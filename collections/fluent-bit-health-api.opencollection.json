@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fluent Bit Monitoring HTTP Build Health API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Health",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Health check (v1)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v1/health"
+          },
+          "docs": "Health check (v1)"
+        },
+        {
+          "info": {
+            "name": "Health status (v2, JSON)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://127.0.0.1:2020/api/v2/health"
+          },
+          "docs": "Health status (v2, JSON)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "8bd867e1-6911-4d3a-aea4-f931c1e47cf6",
+      "name": "Build",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "48b4e507-2029-4a7e-a0bf-a8181c3e1b9d",
+          "name": "Build information",
+          "request": {
+            "name": "Build information",
+            "description": {
+              "content": "Returns Fluent Bit build information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "56dddd92-43d4-4cb2-bb0d-3d5d95d10d63",
+              "name": "Build info",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fluent-bit\": {\n    \"version\": \"string\",\n    \"edition\": \"string\",\n    \"flags\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://127.0.0.1:2020",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c4413bc7-1eb5-4401-aac1-a61ea42e861b",
+    "name": "Fluent Bit Monitoring HTTP Build API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Fluent Bit exposes an embedded HTTP server for runtime monitoring, internal metrics, storage statistics, health checks, and hot reloading. Endpoints are available under v1 (legacy) and v2 (current) paths and respond in JSON, Prometheus 0.0.4, or cmetrics text format.\n\nContact Support:\n Name: Fluent Bit",
+      "type": "text/plain"
+    }
+  }
+}
