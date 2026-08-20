@@ -22,6 +22,11 @@ tags:
   - Logging
   - Observability
   - Metrics
+  - Open-Source
+tags_raw:
+  - Logging
+  - Observability
+  - Metrics
   - Open Source
 url: https://raw.githubusercontent.com/api-evangelist/fluent-bit/refs/heads/main/apis.yml
 created: '2026-03-25'
@@ -34,6 +39,8 @@ apis:
   humanURL: https://docs.fluentbit.io/manual/administration/monitoring
   baseURL: http://127.0.0.1:2020
   tags:
+  - Builds
+  tags_raw:
   - Build
   properties:
   - type: OpenAPI
