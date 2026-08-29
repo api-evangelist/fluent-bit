@@ -5,6 +5,19 @@ description: >-
   metrics at scale. It exposes an embedded HTTP monitoring server with v1 and v2 endpoints for build info, uptime,
   internal metrics (JSON, Prometheus, cmetrics), storage stats, health checks, and hot reload.
 type: Index
+deliveryModel:
+  model: self-hosted
+  license: Apache-2.0
+  open_source: true
+  commercial: false
+  callable_host: false
+  label: Self-hosted open source · you run it yourself
+  confidence: high
+  source:
+  - license
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
