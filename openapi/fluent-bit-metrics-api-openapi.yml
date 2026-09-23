@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Fluent Bit Monitoring HTTP Build Metrics API
+  title: Fluent Bit Monitoring HTTP Metrics API
   description: Fluent Bit exposes an embedded HTTP server for runtime monitoring, internal metrics, storage statistics, health checks, and hot reloading. Endpoints are available under v1 (legacy) and v2 (current) paths and respond in JSON, Prometheus 0.0.4, or cmetrics text format.
   version: 2.0.0
   contact:
@@ -35,6 +35,8 @@ paths:
                   output:
                     type: object
                     additionalProperties: true
+      operationId: getApiV1Metrics
+      x-operation-id-source: derived
   /api/v1/metrics/prometheus:
     get:
       tags:
@@ -47,6 +49,8 @@ paths:
             text/plain; version=0.0.4:
               schema:
                 type: string
+      operationId: getApiV1MetricsPrometheus
+      x-operation-id-source: derived
   /api/v2/metrics:
     get:
       tags:
@@ -59,6 +63,8 @@ paths:
             text/plain:
               schema:
                 type: string
+      operationId: getApiV2Metrics
+      x-operation-id-source: derived
   /api/v2/metrics/prometheus:
     get:
       tags:
@@ -71,3 +77,5 @@ paths:
             text/plain; version=0.0.4:
               schema:
                 type: string
+      operationId: getApiV2MetricsPrometheus
+      x-operation-id-source: derived
