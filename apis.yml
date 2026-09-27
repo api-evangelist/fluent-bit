@@ -35,12 +35,13 @@ tags:
   - Logging
   - Observability
   - Metrics
-  - Open-Source
+  - Open Source
 tags_raw:
   - Logging
   - Observability
   - Metrics
   - Open Source
+  - Open-Source
 url: https://raw.githubusercontent.com/api-evangelist/fluent-bit/refs/heads/main/apis.yml
 created: '2026-03-25'
 modified: '2026-05-19'
