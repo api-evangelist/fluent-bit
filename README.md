@@ -1,4 +1,4 @@
-# Fluent Bit (fluent-bit)
+# Fluent Bit
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,58 +66,124 @@
 
 Fluent Bit is an open source lightweight log processor and forwarder for collecting, parsing, and routing logs and metrics at scale. It exposes an embedded HTTP monitoring server with v1 and v2 endpoints for build info, uptime, internal metrics (JSON, Prometheus, cmetrics), storage stats, health checks, and hot reload.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/fluent-bit/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/fluent-bit/refs/heads/main/apis.yml)
+**Areas:** Logging · Observability · Metrics · Open Source
 
-## Scope
+## Fluent Bit on APIs.io
 
-- **Type:** Index
+Everything profiled for Fluent Bit is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/fluent-bit/](https://apis.io/providers/fluent-bit/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (6)
 
-- Logging
-- Observability
-- Metrics
-- Open Source
+- [Fluent Bit Build API](https://apis.io/apis/fluent-bit/fluent-bit-build-api/) — The Build API from Fluent Bit — 1 operation(s) for build.
+- [Fluent Bit Health API](https://apis.io/apis/fluent-bit/fluent-bit-health-api/) — The Health API from Fluent Bit — 2 operation(s) for health.
+- [Fluent Bit Metrics API](https://apis.io/apis/fluent-bit/fluent-bit-metrics-api/) — The Metrics API from Fluent Bit — 4 operation(s) for metrics.
+- [Fluent Bit Reload API](https://apis.io/apis/fluent-bit/fluent-bit-reload-api/) — The Reload API from Fluent Bit — 1 operation(s) for reload.
+- [Fluent Bit Storage API](https://apis.io/apis/fluent-bit/fluent-bit-storage-api/) — The Storage API from Fluent Bit — 1 operation(s) for storage.
+- [Fluent Bit Uptime API](https://apis.io/apis/fluent-bit/fluent-bit-uptime-api/) — The Uptime API from Fluent Bit — 1 operation(s) for uptime.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-25
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Fluent Bit Monitoring HTTP API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Fluent Bit's embedded HTTP server (default port 2020) exposes endpoints for build information, uptime, internal plugin metrics in JSON, Prometheus, and cmetrics formats, storage layer statistics, health checks, and hot reload.
+- [Fluent Bit Agentic Access](https://apis.io/agentic-access/fluent-bit/fluent-bit-agentic-access/)
 
-- **Human URL:** [https://docs.fluentbit.io/manual/administration/monitoring](https://docs.fluentbit.io/manual/administration/monitoring)
-- **Base URL:** `http://127.0.0.1:2020`
+#### Collections (7)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Logging
-- Observability
-- Metrics
-- Health Check
-- Prometheus
+- [Fluent Bit Monitoring HTTP Build API](https://apis.io/collections/fluent-bit/open-fluent-bit-build-api/)
+- [Fluent Bit Monitoring HTTP Build Health API](https://apis.io/collections/fluent-bit/open-fluent-bit-health-api/)
+- [Fluent Bit Monitoring HTTP Build Metrics API](https://apis.io/collections/fluent-bit/open-fluent-bit-metrics-api/)
+- [Fluent Bit Monitoring HTTP API](https://apis.io/collections/fluent-bit/open-fluent-bit-monitoring/)
+- [Fluent Bit Monitoring HTTP Build Reload API](https://apis.io/collections/fluent-bit/open-fluent-bit-reload-api/)
+- [Fluent Bit Monitoring HTTP Build Storage API](https://apis.io/collections/fluent-bit/open-fluent-bit-storage-api/)
+- [Fluent Bit Monitoring HTTP Build Uptime API](https://apis.io/collections/fluent-bit/open-fluent-bit-uptime-api/)
 
-#### Properties
+#### Security (1)
 
-- [Documentation](https://docs.fluentbit.io/manual/administration/monitoring)
-- [OpenAPI](openapi/fluent-bit-monitoring-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/fluent-bit-monitoring.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/fluent-bit-monitoring.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Fluent Bit Domain Security](https://apis.io/security/fluent-bit/fluent-bit-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Fluent Bit Plans Pricing](https://apis.io/plans/fluent-bit/fluent-bit-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Fluent Bit Rate Limits](https://apis.io/rate-limits/fluent-bit/fluent-bit-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Fluent Bit Finops](https://apis.io/finops/fluent-bit/fluent-bit-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://fluentbit.io)
 - [Documentation](https://docs.fluentbit.io)
-- [GitHub Repository](https://github.com/fluent/fluent-bit)
-- [Slack](https://launchpass.com/fluent-all)
-- [Community](https://fluentbit.io/community/)
-- [Integrations](https://fluentbit.io/integrations)
+- [Blog](https://fluentbit.io/blog/index.xml)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 30.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 38.2 |
+| Contract governance | 0.0 |
+| Operational transparency | 39.5 |
+| Developer ergonomics | 14.3 |
+| Access clarity | 7.9 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/fluent-bit/](https://apis.io/providers/fluent-bit/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Fluent Bit: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/fluent-bit/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
